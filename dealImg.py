@@ -1,5 +1,26 @@
 import cv2
+import os
 
-bgrImage = cv2.imread('2.jpg')
-bgrImage = cv2.resize(bgrImage,(96,96))
-cv2.imwrite('2_96x96.jpg',bgrImage)
+pathNames = ['000001']
+originalDir = 'original'
+
+saveDir = 'processed'
+
+
+for pathName in pathNames:
+    dir = os.path.join(saveDir,pathName)
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+
+for pathName in pathNames:
+    pathRoot = os.path.join(originalDir,pathName) 
+    paths = os.listdir( pathRoot)
+    for fpath in paths:
+        ppath = os.path.join(pathRoot,fpath)
+        img = cv2.imread(ppath)
+        img = cv2.resize(img,(96,96))
+        print(os.path.join(saveDir,pathName,fpath))
+        cv2.imwrite( os.path.join(saveDir,pathName,fpath) ,img)
+
+
+
