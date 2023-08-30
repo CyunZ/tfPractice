@@ -21,14 +21,15 @@ train_dataset = train_dataset.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
 test_dataset = test_dataset.batch(BATCH_SIZE)
 
 model = tf.keras.models.Sequential()
-model.add( tf.keras.layers.Conv2D(32,(3,3),activation='relu',input_shape=(96,96,3)) )
-model.add( tf.keras.layers.MaxPooling2D((2,2)))
+model.add( tf.keras.layers.Conv2D(32,(3,3),(2,2),activation='relu',input_shape=(96,96,3)) )
+model.add( tf.keras.layers.AveragePooling2D((2,2)))
+model.add( tf.keras.layers.Conv2D(64,(3,3),(2,2),activation='relu'))
+model.add( tf.keras.layers.AveragePooling2D((2,2)))
 model.add( tf.keras.layers.Conv2D(64,(3,3),activation='relu'))
-model.add( tf.keras.layers.MaxPooling2D((2,2)))
-model.add( tf.keras.layers.Conv2D(64,(3,3),activation='relu'))
+model.add( tf.keras.layers.AveragePooling2D((2,2)))
 model.add( tf.keras.layers.Flatten())
-model.add( tf.keras.layers.Dense(64,activation='relu') )
 model.add( tf.keras.layers.Dense(6) )
+
 
 model.summary()
 
