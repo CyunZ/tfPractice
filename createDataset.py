@@ -5,8 +5,9 @@ import cv2
 trainImgDir = 'trainImg'
 testImgDir = 'testImg'
 #文件夹名即label
-pathNames = ['000001']
-labelMap = {'000001':[0,0,0,0,0,1]}
+pathNames = ['000001','500001']
+labelMap = {'000001':[0,0,0,0,0,1],
+            '500001':[0.5,0,0,0,0,1]}
 
 train_imgs = []
 train_labels = []

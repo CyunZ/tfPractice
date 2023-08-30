@@ -1,7 +1,7 @@
 import cv2
 import os
 
-pathNames = ['000001']
+pathNames = ['000001','500001']
 originalDir = 'original'
 
 saveDir = 'processed'
