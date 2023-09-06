@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy as np
-import cv2 
-from PIL import Image
+
 
 
 with np.load('TrainDataSet.npz') as data:
@@ -17,7 +16,7 @@ test_dataset = tf.data.Dataset.from_tensor_slices((imgs, labels))
 BATCH_SIZE = 20
 SHUFFLE_BUFFER_SIZE = 30
 
-train_dataset = train_dataset.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
+train_dataset = train_dataset.shuffle(SHUFFLE_BUFFER_SIZE) .batch(BATCH_SIZE)
 test_dataset = test_dataset.batch(BATCH_SIZE)
 
 model = tf.keras.models.Sequential()
