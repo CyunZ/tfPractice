@@ -24,7 +24,7 @@ model.add( tf.keras.layers.Conv2D(32,(3,3),(2,2),activation='relu',input_shape=(
 model.add( tf.keras.layers.AveragePooling2D((2,2)))
 model.add( tf.keras.layers.Conv2D(64,(3,3),(2,2),activation='relu'))
 model.add( tf.keras.layers.AveragePooling2D((2,2)))
-model.add( tf.keras.layers.Conv2D(64,(3,3),activation='relu'))
+model.add( tf.keras.layers.Conv2D(128,(3,3),activation='relu'))
 model.add( tf.keras.layers.AveragePooling2D((2,2)))
 model.add( tf.keras.layers.Flatten())
 model.add( tf.keras.layers.Dense(6) )
@@ -41,5 +41,5 @@ model.fit(train_dataset, epochs=10)
 print('测试')
 model.evaluate(test_dataset)
 
-
+model.save('MyModel.h5')
 
