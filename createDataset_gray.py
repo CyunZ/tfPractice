@@ -1,23 +1,10 @@
 import numpy as np
 import os
 import cv2
+from commonPara import pathNames,labelMap
 
 trainImgDir = 'trainImg'
 testImgDir = 'testImg'
-#文件夹名即label
-pathNames = ['000001',
-             '500001','050001','005001','000501','000051',
-             '550001']
-
-labelMap = {
-            '000001':[0,    0,  0,  0,  0,  1],
-            '500001':[0.5,  0,  0,  0,  0,  1],
-            '050001':[0,    0.5,0,  0,  0,  1],
-            '005001':[0,    0,  0.5,0,  0,  1],
-            '000501':[0,    0,  0,  0.5,0,  1],
-            '000051':[0,    0,  0,  0,  0.5,1],
-            '550001':[0.5,  0.5,0,  0,  0,  1],
-            }
 
 train_imgs = []
 train_labels = []

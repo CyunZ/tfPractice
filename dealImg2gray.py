@@ -1,9 +1,7 @@
 import cv2
 import os
+from commonPara import pathNames
 
-pathNames = ['000001',
-             '500001','050001','005001','000501','000051',
-             '550001']
 originalDir = 'original'
 
 
